@@ -17,14 +17,14 @@ jobs:
         - uses: actions/checkout@v2
 
         - name: Install hubs deps
-          run: npm i --force
+          run: QT_QPA_PLATFORM=offscreen npm i --force
 
         - name: Build for Hubs
-          run: npm run build
+          run: QT_QPA_PLATFORM=offscreen npm run build
 
         - name: Install hubs admin deps
           run: |
             cd admin/
             pwd
-            npm i --force
-            npm run build
+            QT_QPA_PLATFORM=offscreen npm i --force
+            QT_QPA_PLATFORM=offscreen npm run build
